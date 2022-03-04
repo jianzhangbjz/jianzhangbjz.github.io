@@ -1,6 +1,14 @@
+**Note that:**
+To avoid the below problem, we use the `quay.io/olmqe/registry:2.7.0` instead of the `docker.io/library/registry:2.7.0`.
+```yaml
+Trying to pull docker.io/library/registry:2.7.0...
+WARN[0030] failed, retrying in 1s ... (1/3). Error: initializing source docker://registry:2.7.0: reading manifest 2.7.0 in docker.io/library/registry: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit 
+...
+```
+
 1. Create the user/password file, as follows:
 ```console
-[cloud-user@preserve-olm-env jian]$ docker run --entrypoint htpasswd registry:2.7.0 -Bbn <username> <password> > /data/jian/auth/htpasswd
+[cloud-user@preserve-olm-env jian]$ docker run --entrypoint htpasswd quay.io/olmqe/registry:2.7.0 -Bbn <username> <password> > /data/jian/auth/htpasswd
 Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
 Resolved "registry" as an alias (/etc/containers/registries.conf.d/000-shortnames.conf)
 Trying to pull docker.io/library/registry:2.7.0...
@@ -59,7 +67,7 @@ total 4
 
 4. Create a TLS registry container
 ```console
-[cloud-user@preserve-olm-env jian]$ sudo docker run -d --name registry_native_auth -p 5000:5000 -v /data/jian/auth:/auth -e "REGISTRY_AUTH=htpasswd" -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" -e REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd -v /data/jian/certs:/certs -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key --privileged registry:2.7.0
+[cloud-user@preserve-olm-env jian]$ sudo docker run -d --name registry_native_auth -p 5000:5000 -v /data/jian/auth:/auth -e "REGISTRY_AUTH=htpasswd" -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" -e REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd -v /data/jian/certs:/certs -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key --privileged quay.io/olmqe/registry:2.7.0
 Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
 6d7e880e4b2a056cf75ec01f3bfdbce6079127a50c5ab2ddff2f387ff4ed0d4c
 [cloud-user@preserve-olm-env jian]$ sudo docker ps
