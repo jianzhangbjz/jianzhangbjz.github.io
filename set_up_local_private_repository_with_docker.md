@@ -25,7 +25,7 @@ Storing signatures
 
 2. Create a self-signed cerfication.
 ```console
-[cloud-user@preserve-olm-env certs]$ openssl req -newkey rsa:4096 -nodes -sha256 -keyout /data/jian/certs/domain.key -x509 -days 3650 -out /data/jian/certs/domain.crt
+[cloud-user@preserve-olm-env certs]$ openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key -x509 -days 3650 -out /data/jian/certs/domain.crt -subj "/CN=localhost" -addext "subjectAltName = DNS:localhost"
 Generating a RSA private key
 .................................++++
 ...................................++++
@@ -87,7 +87,7 @@ Password:
 Error: error authenticating creds for "localhost:5000": error pinging docker registry localhost:5000: Get "https://localhost:5000/v2/": x509: certificate relies on legacy Common Name field, use SANs or temporarily enable Common Name matching with GODEBUG=x509ignoreCN=0
 ```
 
-6. Export `GODEBUG=x509ignoreCN=0` and relogin.
+6. A workaround for the above issue, export `GODEBUG=x509ignoreCN=0` and relogin. 
 ```console
 [cloud-user@preserve-olm-env jian]$ export  GODEBUG=x509ignoreCN=0
 [cloud-user@preserve-olm-env jian]$ docker login localhost:5000
