@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jian Zhang - Technical Portfolio</title>
+<title>Jian Zhang - Technical Portfolio (Local Repos)</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -18,29 +18,19 @@
   --border: #2a2e3a;
   --gradient-1: linear-gradient(135deg, #60a5fa, #a78bfa);
   --gradient-2: linear-gradient(135deg, #34d399, #60a5fa);
+  --warn: #fb923c;
 }
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
 
 .lang-toggle-wrapper { position: absolute; top: 2rem; right: 2rem; z-index: 100; }
 #lang-toggle { display: none; }
 .lang-cn { display: none; }
-#lang-toggle:checked ~ * .lang-en,
-#lang-toggle:checked ~ footer .lang-en { display: none; }
-#lang-toggle:checked ~ * .lang-cn,
-#lang-toggle:checked ~ footer .lang-cn { display: inline; }
-#lang-toggle:checked ~ * .lang-cn.block,
-#lang-toggle:checked ~ footer .lang-cn.block { display: block; }
-.lang-switch { display: flex; gap: 0; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); z-index: 100; position: relative; }
-.lang-switch label { padding: 7px 16px; font-size: 0.85rem; cursor: pointer; color: var(--text-dim); background: transparent; user-select: none; font-family: 'Inter', sans-serif; }
+#lang-toggle:checked ~ * .lang-en, #lang-toggle:checked ~ footer .lang-en { display: none; }
+#lang-toggle:checked ~ * .lang-cn, #lang-toggle:checked ~ footer .lang-cn { display: inline; }
+#lang-toggle:checked ~ * .lang-cn.block, #lang-toggle:checked ~ footer .lang-cn.block { display: block; }
+.lang-switch { display: flex; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); z-index: 100; position: relative; }
+.lang-switch label { padding: 7px 16px; font-size: 0.85rem; cursor: pointer; color: var(--text-dim); background: transparent; user-select: none; }
 .lang-switch .lbl-en { background: rgba(96,165,250,0.2); color: #60a5fa; font-weight: 600; }
 #lang-toggle:checked ~ header .lang-switch .lbl-en { background: transparent; color: var(--text-dim); font-weight: 400; }
 #lang-toggle:checked ~ header .lang-switch .lbl-cn { background: rgba(96,165,250,0.2); color: #60a5fa; font-weight: 600; }
@@ -49,27 +39,15 @@ body {
 
 #particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 
-.hero {
-  position: relative; z-index: 1;
-  min-height: 100vh; display: flex; flex-direction: column;
-  justify-content: center; align-items: center; text-align: center; padding: 2rem;
-}
-.hero h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 800;
-  background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  margin-bottom: 0.5rem; letter-spacing: -0.02em;
-}
+.hero { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; }
+.hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 800; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
 .hero .subtitle { font-size: clamp(1rem, 2vw, 1.4rem); color: var(--text-dim); margin-bottom: 1.5rem; font-weight: 300; }
-.hero .tagline { max-width: 750px; font-size: 1.05rem; color: var(--text-dim); line-height: 1.8; margin-bottom: 2.5rem; }
-.hero .stats-row { display: flex; gap: 3rem; margin-bottom: 2.5rem; flex-wrap: wrap; justify-content: center; }
+.hero .tagline { max-width: 780px; font-size: 1.05rem; color: var(--text-dim); line-height: 1.8; margin-bottom: 2.5rem; }
+.hero .stats-row { display: flex; gap: 2.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; justify-content: center; }
 .stat-item { text-align: center; }
 .stat-item .num { font-size: 2rem; font-weight: 700; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .stat-item .label { font-size: 0.85rem; color: var(--text-dim); margin-top: 0.2rem; }
-.scroll-indicator {
-  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-  animation: bounce 2s infinite; color: var(--text-dim); font-size: 0.85rem;
-  display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
-}
+.scroll-indicator { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); animation: bounce 2s infinite; color: var(--text-dim); font-size: 0.85rem; display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
 .scroll-indicator svg { width: 20px; height: 20px; }
 @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
 
@@ -83,55 +61,37 @@ body {
 .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
 .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
 
-.card {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
-  padding: 1.5rem; transition: all 0.3s ease;
-}
+.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; transition: all 0.3s ease; }
 .card:hover { background: var(--bg-card-hover); border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(96, 165, 250, 0.08); }
-.card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text); }
+.card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
 .card p, .card li { font-size: 0.9rem; color: var(--text-dim); line-height: 1.7; }
 .card ul { list-style: none; padding: 0; }
 .card ul li { padding-left: 1.2rem; position: relative; margin-bottom: 0.4rem; }
 .card ul li::before { content: "\25B8"; position: absolute; left: 0; color: var(--primary); }
 
 .tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
-.tech-tag {
-  font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
-  padding: 0.2rem 0.6rem; border-radius: 4px;
-  background: rgba(96, 165, 250, 0.1); color: var(--primary); border: 1px solid rgba(96, 165, 250, 0.2);
-}
+.tech-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 4px; background: rgba(96, 165, 250, 0.1); color: var(--primary); border: 1px solid rgba(96, 165, 250, 0.2); }
 .tech-tag.go { background: rgba(0, 173, 216, 0.1); color: #00add8; border-color: rgba(0, 173, 216, 0.2); }
 .tech-tag.python { background: rgba(55, 118, 165, 0.1); color: #3776a5; border-color: rgba(55, 118, 165, 0.2); }
 .tech-tag.k8s { background: rgba(50, 108, 229, 0.1); color: #326ce5; border-color: rgba(50, 108, 229, 0.2); }
+.tech-tag.yaml { background: rgba(203, 56, 55, 0.1); color: #cb3837; border-color: rgba(203, 56, 55, 0.2); }
+.tech-tag.ai { background: rgba(167, 139, 250, 0.1); color: #a78bfa; border-color: rgba(167, 139, 250, 0.2); }
 
 .skill-items { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.skill-item {
-  font-size: 0.82rem; padding: 0.35rem 0.75rem; border-radius: 6px;
-  background: rgba(96, 165, 250, 0.06); border: 1px solid var(--border); transition: all 0.2s ease;
-}
+.skill-item { font-size: 0.82rem; padding: 0.35rem 0.75rem; border-radius: 6px; background: rgba(96, 165, 250, 0.06); border: 1px solid var(--border); transition: all 0.2s ease; }
 .skill-item:hover { background: rgba(96, 165, 250, 0.12); border-color: rgba(96, 165, 250, 0.3); transform: translateY(-1px); }
 
-.project-card {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
-  padding: 1.75rem; margin-bottom: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden;
-}
+.project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; margin-bottom: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden; }
 .project-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--gradient-1); opacity: 0; transition: opacity 0.3s ease; }
 .project-card:hover::before { opacity: 1; }
 .project-card:hover { background: var(--bg-card-hover); border-color: var(--primary); }
 .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
 .project-name { font-size: 1.1rem; font-weight: 600; }
 .project-org { font-size: 0.8rem; color: var(--text-dim); }
-.project-commit-count {
-  font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;
-  padding: 0.2rem 0.6rem; background: rgba(96, 165, 250, 0.1);
-  border: 1px solid rgba(96, 165, 250, 0.2); border-radius: 4px; color: var(--primary); white-space: nowrap;
-}
+.project-commit-count { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; padding: 0.2rem 0.6rem; background: rgba(96, 165, 250, 0.1); border: 1px solid rgba(96, 165, 250, 0.2); border-radius: 4px; color: var(--primary); white-space: nowrap; }
 .project-desc { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 0.75rem; line-height: 1.7; }
 .project-contributions { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.contribution-chip {
-  font-size: 0.78rem; padding: 0.2rem 0.6rem; border-radius: 4px;
-  background: rgba(167, 139, 250, 0.08); border: 1px solid rgba(167, 139, 250, 0.15); color: var(--secondary);
-}
+.contribution-chip { font-size: 0.78rem; padding: 0.2rem 0.6rem; border-radius: 4px; background: rgba(167, 139, 250, 0.08); border: 1px solid rgba(167, 139, 250, 0.15); color: var(--secondary); }
 
 .arch-container { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; overflow-x: auto; margin: 2rem 0; }
 .arch-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; min-width: 800px; }
@@ -144,6 +104,7 @@ body {
 .arch-box.green { background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
 .arch-box.orange { background: rgba(251, 146, 60, 0.15); color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.3); }
 .arch-box.cyan { background: rgba(34, 211, 238, 0.15); color: #22d3ee; border: 1px solid rgba(34, 211, 238, 0.3); }
+.arch-box.pink { background: rgba(244, 114, 182, 0.15); color: #f472b6; border: 1px solid rgba(244, 114, 182, 0.3); }
 .arch-arrow { text-align: center; color: var(--text-dim); font-size: 0.75rem; padding: 0.25rem 0; }
 
 .design-highlight { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; margin: 1rem 0; }
@@ -153,12 +114,21 @@ body {
 .design-highlight ul li::before { content: "\2192"; position: absolute; left: 0; color: var(--accent); }
 
 .timeline { position: relative; padding-left: 2rem; }
-.timeline::before { content: ''; position: absolute; left: 0; top: 0.5rem; bottom: 0.5rem; width: 2px; background: linear-gradient(to bottom, var(--primary), var(--secondary)); border-radius: 1px; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 0.5rem; bottom: 0.5rem; width: 2px; background: linear-gradient(to bottom, var(--primary), var(--secondary), var(--accent)); border-radius: 1px; }
 .timeline-item { position: relative; margin-bottom: 2rem; }
 .timeline-item::before { content: ''; position: absolute; left: -2rem; top: 0.6rem; width: 10px; height: 10px; border-radius: 50%; background: var(--primary); border: 2px solid var(--bg); transform: translateX(-5px); }
 .timeline-date { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--text-dim); margin-bottom: 0.3rem; }
 .timeline-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.3rem; }
 .timeline-desc { font-size: 0.88rem; color: var(--text-dim); }
+
+/* Bar chart */
+.bar-chart { display: flex; flex-direction: column; gap: 0.6rem; }
+.bar-row { display: flex; align-items: center; gap: 0.75rem; }
+.bar-label { font-size: 0.78rem; color: var(--text-dim); min-width: 200px; text-align: right; font-family: 'JetBrains Mono', monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bar-track { flex: 1; height: 22px; background: rgba(96,165,250,0.06); border-radius: 4px; position: relative; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 4px; background: var(--gradient-1); display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; min-width: 30px; transition: width 1s ease; }
+.bar-fill span { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #fff; font-weight: 600; }
+.bar-fill.green { background: var(--gradient-2); }
 
 .footer { text-align: center; padding: 3rem 0; color: var(--text-dim); font-size: 0.85rem; position: relative; z-index: 1; }
 .divider { height: 1px; background: linear-gradient(to right, transparent, var(--border), transparent); margin: 2rem 0; }
@@ -166,30 +136,21 @@ html { scroll-behavior: smooth; }
 
 @media (max-width: 768px) {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .hero .stats-row { gap: 1.2rem; }
   .container { padding: 0 1rem; }
   .section { padding: 2.5rem 0; }
   .hero { min-height: auto; padding: 6rem 1rem 4rem; }
   .hero h1 { font-size: 1.8rem; }
-  .hero .subtitle { font-size: 0.9rem; }
-  .hero .tagline { font-size: 0.85rem; line-height: 1.6; max-width: 100%; }
   .stat-item .num { font-size: 1.4rem; }
-  .stat-item .label { font-size: 0.7rem; }
   .lang-toggle-wrapper { top: 1rem; right: 0.5rem; }
   .arch-container { padding: 0.75rem; }
   .arch-grid { min-width: auto; }
-  .arch-layer { padding: 0.75rem 0.5rem; margin-top: 0.75rem; }
   .arch-box { padding: 0.35rem 0.5rem; font-size: 0.65rem; min-width: auto; flex: 1 1 auto; }
   .project-card { padding: 1.25rem; }
   .project-header { flex-direction: column; }
   .section-title { font-size: 1.3rem; }
-  .section-subtitle { font-size: 0.85rem; margin-bottom: 2rem; }
+  .bar-label { min-width: 120px; font-size: 0.65rem; }
 }
-@media (max-width: 480px) {
-  .hero { padding: 5rem 0.75rem 3rem; }
-  .hero h1 { font-size: 1.5rem; }
-  .lang-switch label { padding: 5px 10px; font-size: 0.75rem; }
-}
+@media (max-width: 480px) { .hero { padding: 5rem 0.75rem 3rem; } .hero h1 { font-size: 1.5rem; } .lang-switch label { padding: 5px 10px; font-size: 0.75rem; } }
 </style>
 </head>
 <body>
@@ -218,25 +179,25 @@ html { scroll-behavior: smooth; }
   </p>
   <p class="tagline">
     <span class="lang-en">
-      Architect of the <strong>ERT Automation Framework</strong> — a Go-based release orchestration platform
-      automating the entire OpenShift end-to-end delivery pipeline.
-      11 years of Kubernetes expertise spanning Operator development, platform infrastructure,
-      CI/CD pipeline engineering, and large-scale distributed system reliability.
-      322 merged PRs across 46 open-source repositories.
+      1,145 commits across 38 repositories — spanning Kubernetes Operator development (Go),
+      end-to-end release automation, CI/CD pipeline engineering, performance benchmarking,
+      and AI-powered diagnostics. Architect of the <strong>ERT Framework</strong> automating
+      the entire OpenShift product delivery pipeline. Approver on 5 core repositories.
     </span>
     <span class="lang-cn">
-      <strong>ERT 自动化框架</strong>架构师 — 基于 Go 的 OpenShift 端到端发布编排平台。
-      11 年 Kubernetes 专业经验，涵盖 Operator 开发、平台基础设施、
-      CI/CD 流水线工程及大规模分布式系统可靠性。
-      跨 46 个开源仓库贡献 322 个合并 PR。
+      跨 38 个仓库 1,145 次提交 — 涵盖 Kubernetes Operator 开发 (Go)、
+      端到端发布自动化、CI/CD 流水线工程、性能基准测试和 AI 驱动诊断。
+      <strong>ERT 框架</strong>架构师，自动化整个 OpenShift 产品交付流水线。
+      5 个核心仓库的 Approver。
     </span>
   </p>
   <div class="stats-row">
+    <div class="stat-item"><div class="num">1,145</div><div class="label"><span class="lang-en">Commits</span><span class="lang-cn">提交</span></div></div>
+    <div class="stat-item"><div class="num">38</div><div class="label"><span class="lang-en">Repositories</span><span class="lang-cn">仓库</span></div></div>
     <div class="stat-item"><div class="num">322</div><div class="label"><span class="lang-en">Merged PRs</span><span class="lang-cn">合并 PR</span></div></div>
     <div class="stat-item"><div class="num">258</div><div class="label"><span class="lang-en">Code Reviews</span><span class="lang-cn">代码审查</span></div></div>
-    <div class="stat-item"><div class="num">46</div><div class="label"><span class="lang-en">Repositories</span><span class="lang-cn">仓库</span></div></div>
-    <div class="stat-item"><div class="num">11</div><div class="label"><span class="lang-en">Years K8s</span><span class="lang-cn">年 K8s 经验</span></div></div>
     <div class="stat-item"><div class="num">9</div><div class="label"><span class="lang-en">Years Go</span><span class="lang-cn">年 Go 经验</span></div></div>
+    <div class="stat-item"><div class="num">11</div><div class="label"><span class="lang-en">Years K8s</span><span class="lang-cn">年 K8s 经验</span></div></div>
   </div>
   <div class="tech-stack" style="justify-content: center;">
     <span class="tech-tag go">Go</span>
@@ -244,9 +205,10 @@ html { scroll-behavior: smooth; }
     <span class="tech-tag k8s">Kubernetes</span>
     <span class="tech-tag">OpenShift</span>
     <span class="tech-tag">Operator SDK</span>
-    <span class="tech-tag">CI/CD</span>
+    <span class="tech-tag">Prow CI</span>
     <span class="tech-tag">Prometheus</span>
     <span class="tech-tag">Ansible</span>
+    <span class="tech-tag">k8sgpt</span>
   </div>
   <div class="scroll-indicator">
     <span class="lang-en">Scroll to explore</span>
@@ -256,12 +218,45 @@ html { scroll-behavior: smooth; }
 </section>
 </header>
 
-<!-- Technical Skills -->
+<!-- Commit Distribution -->
 <section class="section">
   <div class="container">
-    <div class="section-title"><span class="icon">&#9889;</span> <span class="lang-en">Technical Skills</span><span class="lang-cn">技术能力</span></div>
-    <div class="section-subtitle"><span class="lang-en">Core technologies across platform engineering, SRE, and distributed systems</span><span class="lang-cn">平台工程、SRE 与分布式系统核心技术</span></div>
+    <div class="section-title"><span class="icon">&#x1F4CA;</span>
+      <span class="lang-en">Commit Distribution</span>
+      <span class="lang-cn">提交分布</span>
+    </div>
+    <div class="section-subtitle">
+      <span class="lang-en">1,145 commits across 38 local repositories analyzed from git history</span>
+      <span class="lang-cn">基于 git 历史分析的 38 个本地仓库 1,145 次提交</span>
+    </div>
+    <div class="bar-chart">
+      <div class="bar-row"><div class="bar-label">openshift-tests-private</div><div class="bar-track"><div class="bar-fill" style="width:100%"><span>459</span></div></div></div>
+      <div class="bar-row"><div class="bar-label">operator-framework-operator-ctrl</div><div class="bar-track"><div class="bar-fill" style="width:48.8%"><span>224</span></div></div></div>
+      <div class="bar-row"><div class="bar-label">openshift/release</div><div class="bar-track"><div class="bar-fill" style="width:30.3%"><span>139</span></div></div></div>
+      <div class="bar-row"><div class="bar-label">openshift/release-tests</div><div class="bar-track"><div class="bar-fill green" style="width:16.1%"><span>74</span></div></div></div>
+      <div class="bar-row"><div class="bar-label">learn-operator</div><div class="bar-track"><div class="bar-fill" style="width:6.3%"><span>29</span></div></div></div>
+      <div class="bar-row"><div class="bar-label">flexy-templates</div><div class="bar-track"><div class="bar-fill green" style="width:6.1%"><span>28</span></div></div></div>
+      <div class="bar-row"><div class="bar-label">jenkins-jcasc-n</div><div class="bar-track"><div class="bar-fill" style="width:5.2%"><span>24</span></div></div></div>
+      <div class="bar-row"><div class="bar-label">openshift/openshift-tests</div><div class="bar-track"><div class="bar-fill" style="width:3.9%"><span>18 (via PR)</span></div></div></div>
+      <div class="bar-row"><div class="bar-label">kubernetes/kubernetes</div><div class="bar-track"><div class="bar-fill green" style="width:3.7%"><span>17</span></div></div></div>
+      <div class="bar-row"><div class="bar-label">operator-framework-olm</div><div class="bar-track"><div class="bar-fill" style="width:3.7%"><span>17</span></div></div></div>
+      <div class="bar-row"><div class="bar-label">operator-lifecycle-manager</div><div class="bar-track"><div class="bar-fill green" style="width:3.3%"><span>15</span></div></div></div>
+      <div class="bar-row"><div class="bar-label"><span class="lang-en">Other 26 repos</span><span class="lang-cn">其他 26 个仓库</span></div><div class="bar-track"><div class="bar-fill" style="width:17.6%"><span>81</span></div></div></div>
+    </div>
+  </div>
+</section>
 
+<!-- Technical Skills -->
+<section class="section" style="background: rgba(96,165,250,0.02);">
+  <div class="container">
+    <div class="section-title"><span class="icon">&#9889;</span>
+      <span class="lang-en">Technical Skills</span>
+      <span class="lang-cn">技术能力</span>
+    </div>
+    <div class="section-subtitle">
+      <span class="lang-en">Derived from actual code contributions across 38 repositories</span>
+      <span class="lang-cn">基于 38 个仓库的实际代码贡献</span>
+    </div>
     <div class="grid-3">
       <div class="card">
         <h3><span class="lang-en">Languages</span><span class="lang-cn">编程语言</span></h3>
@@ -269,404 +264,387 @@ html { scroll-behavior: smooth; }
           <span class="skill-item">Go (9 years)</span>
           <span class="skill-item">Python</span>
           <span class="skill-item">Bash/Shell</span>
-          <span class="skill-item">YAML</span>
+          <span class="skill-item">YAML/JSON</span>
+          <span class="skill-item">Groovy (Jenkins)</span>
+          <span class="skill-item">Ginkgo/Gomega</span>
         </div>
       </div>
       <div class="card">
-        <h3><span class="lang-en">Kubernetes & Operators</span><span class="lang-cn">Kubernetes 与 Operator</span></h3>
+        <h3><span class="lang-en">Kubernetes Operator Development</span><span class="lang-cn">Kubernetes Operator 开发</span></h3>
         <div class="skill-items">
-          <span class="skill-item">Kubernetes (11 years)</span>
-          <span class="skill-item">OpenShift</span>
-          <span class="skill-item">Operator SDK</span>
+          <span class="skill-item">operator-sdk</span>
           <span class="skill-item">controller-runtime</span>
-          <span class="skill-item">CRD/Controller</span>
-          <span class="skill-item">Helm</span>
-          <span class="skill-item">ArgoCD</span>
+          <span class="skill-item">CRD / Controller</span>
+          <span class="skill-item">Reconcile Loop</span>
+          <span class="skill-item">Informer / Lister</span>
+          <span class="skill-item">Finalizer</span>
+          <span class="skill-item">Admission Webhooks</span>
+          <span class="skill-item">leader-election</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3><span class="lang-en">CI/CD & Release Engineering</span><span class="lang-cn">CI/CD 与发布工程</span></h3>
+        <div class="skill-items">
+          <span class="skill-item">Prow (139 commits)</span>
+          <span class="skill-item">Jenkins (24 commits)</span>
+          <span class="skill-item">GitHub Actions</span>
+          <span class="skill-item">ArgoCD / GitOps</span>
+          <span class="skill-item">Release Gating</span>
+          <span class="skill-item">Multi-Arch Pipelines</span>
         </div>
       </div>
       <div class="card">
         <h3><span class="lang-en">Cloud & Infrastructure</span><span class="lang-cn">云与基础设施</span></h3>
         <div class="skill-items">
-          <span class="skill-item">AWS (EC2, S3, EKS)</span>
+          <span class="skill-item">AWS (EC2, EKS, S3)</span>
           <span class="skill-item">Azure (AKS)</span>
           <span class="skill-item">GCP (GKE)</span>
           <span class="skill-item">RHEL/CentOS</span>
-          <span class="skill-item">Terraform</span>
           <span class="skill-item">Ansible (certified)</span>
+          <span class="skill-item">Terraform / Helm</span>
         </div>
       </div>
       <div class="card">
-        <h3><span class="lang-en">CI/CD & Automation</span><span class="lang-cn">CI/CD 与自动化</span></h3>
+        <h3><span class="lang-en">Testing & Quality</span><span class="lang-cn">测试与质量</span></h3>
         <div class="skill-items">
-          <span class="skill-item">Prow</span>
-          <span class="skill-item">Jenkins</span>
-          <span class="skill-item">GitHub Actions</span>
-          <span class="skill-item">ArgoCD (GitOps)</span>
-          <span class="skill-item">Tekton</span>
+          <span class="skill-item">E2E Testing (459 commits)</span>
+          <span class="skill-item">Ginkgo Framework</span>
+          <span class="skill-item">envtest</span>
+          <span class="skill-item">kube-burner Benchmarks</span>
+          <span class="skill-item">FIPS Validation</span>
+          <span class="skill-item">Long-Duration Tests</span>
         </div>
       </div>
       <div class="card">
-        <h3><span class="lang-en">SRE & Observability</span><span class="lang-cn">SRE 与可观测性</span></h3>
+        <h3><span class="lang-en">Observability & AI Diagnostics</span><span class="lang-cn">可观测性与 AI 诊断</span></h3>
         <div class="skill-items">
           <span class="skill-item">Prometheus</span>
           <span class="skill-item">Grafana</span>
           <span class="skill-item">ELK Stack</span>
-          <span class="skill-item">kube-burner</span>
-          <span class="skill-item">SLI/SLO</span>
-          <span class="skill-item">Incident Response</span>
-          <span class="skill-item">DR/HA</span>
-        </div>
-      </div>
-      <div class="card">
-        <h3><span class="lang-en">Distributed Systems</span><span class="lang-cn">分布式系统</span></h3>
-        <div class="skill-items">
-          <span class="skill-item">Fault Tolerance</span>
-          <span class="skill-item">Leader Election</span>
-          <span class="skill-item">Race Conditions</span>
-          <span class="skill-item">Reconcile Loop</span>
-          <span class="skill-item">Failover/Rollback</span>
-          <span class="skill-item">Capacity Planning</span>
+          <span class="skill-item">k8sgpt Analyzers</span>
+          <span class="skill-item">SLI / SLO</span>
+          <span class="skill-item">Alerting</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Architecture: ERT Framework -->
-<section class="section" style="background: rgba(96,165,250,0.02);">
+<!-- Architecture -->
+<section class="section">
   <div class="container">
     <div class="section-title"><span class="icon">&#x1F3D7;</span>
-      <span class="lang-en">System Architecture: ERT Automation Framework</span>
-      <span class="lang-cn">系统架构：ERT 自动化框架</span>
+      <span class="lang-en">Architecture: OpenShift Operator Ecosystem</span>
+      <span class="lang-cn">架构：OpenShift Operator 生态系统</span>
     </div>
     <div class="section-subtitle">
-      <span class="lang-en">Designed and built the end-to-end release automation platform for OpenShift product delivery</span>
-      <span class="lang-cn">设计并构建 OpenShift 产品交付的端到端发布自动化平台</span>
+      <span class="lang-en">End-to-end involvement from upstream development to production delivery (660+ commits across all layers)</span>
+      <span class="lang-cn">从上游开发到生产交付的端到端参与（跨所有层 660+ 次提交）</span>
     </div>
 
     <div class="arch-container">
       <div class="arch-grid">
         <div class="arch-layer">
           <div class="arch-layer-title">
-            <span class="lang-en">CI/CD Pipeline Layer</span>
-            <span class="lang-cn">CI/CD 流水线层</span>
+            <span class="lang-en">Upstream Operator Framework (Go)</span>
+            <span class="lang-cn">上游 Operator Framework (Go)</span>
           </div>
           <div class="arch-boxes">
-            <div class="arch-box blue">Prow Jobs</div>
-            <div class="arch-box blue">Jenkins Pipelines</div>
-            <div class="arch-box blue">GitHub Actions</div>
-            <div class="arch-box blue">ArgoCD GitOps</div>
+            <div class="arch-box blue">OLM (15 commits)</div>
+            <div class="arch-box blue">operator-controller (5)</div>
+            <div class="arch-box blue">marketplace (7)</div>
+            <div class="arch-box blue">operator-registry (1)</div>
+            <div class="arch-box blue">operator-sdk (1)</div>
+            <div class="arch-box blue">api (2)</div>
           </div>
         </div>
-        <div class="arch-arrow">&#9660; Job Triggering | Webhook Events | GitOps Sync</div>
+        <div class="arch-arrow">&#9660; <span class="lang-en">Upstream Bug Fixes | Feature Development | API Design</span><span class="lang-cn">上游 Bug 修复 | 功能开发 | API 设计</span></div>
 
         <div class="arch-layer">
           <div class="arch-layer-title">
-            <span class="lang-en">Release Orchestration</span>
-            <span class="lang-cn">发布编排层</span>
+            <span class="lang-en">OpenShift Downstream Integration</span>
+            <span class="lang-cn">OpenShift 下游集成</span>
           </div>
           <div class="arch-boxes">
-            <div class="arch-box cyan">Release Gate Testing</div>
-            <div class="arch-box cyan">Multi-Arch Validation</div>
-            <div class="arch-box cyan">Payload Verification</div>
-            <div class="arch-box cyan">Staged Rollouts</div>
+            <div class="arch-box purple">operator-framework-olm (17)</div>
+            <div class="arch-box purple">operator-framework-operator-ctrl (224)</div>
+            <div class="arch-box purple">cluster-olm-operator (4)</div>
+            <div class="arch-box purple">catalogd (1)</div>
           </div>
         </div>
-        <div class="arch-arrow">&#9660; Test Results | Approval Gates | Rollback Triggers</div>
+        <div class="arch-arrow">&#9660; <span class="lang-en">Carry Patches | Backports | FIPS | Multi-Arch | TLS</span><span class="lang-cn">Carry 补丁 | 回移 | FIPS | 多架构 | TLS</span></div>
 
         <div class="arch-layer">
           <div class="arch-layer-title">
-            <span class="lang-en">Operator & Controller Layer (Go)</span>
-            <span class="lang-cn">Operator 与控制器层 (Go)</span>
+            <span class="lang-en">E2E Testing & Validation (459+ commits)</span>
+            <span class="lang-cn">端到端测试与验证 (459+ 次提交)</span>
           </div>
           <div class="arch-boxes">
-            <div class="arch-box purple">OLM (Operator Lifecycle Manager)</div>
-            <div class="arch-box purple">Operator Controller</div>
-            <div class="arch-box purple">Cluster OLM Operator</div>
-            <div class="arch-box purple">Marketplace</div>
+            <div class="arch-box cyan">openshift-tests-private (459)</div>
+            <div class="arch-box cyan">openshift-tests (18 PRs)</div>
+            <div class="arch-box cyan">origin (8)</div>
+            <div class="arch-box cyan">verification-tests (9 PRs)</div>
           </div>
         </div>
-        <div class="arch-arrow">&#9660; CRD | Reconcile Loop | Informer | Webhooks | Finalizer</div>
+        <div class="arch-arrow">&#9660; <span class="lang-en">Test Results | Gate Decisions | Regression Detection</span><span class="lang-cn">测试结果 | 门控决策 | 回归检测</span></div>
 
         <div class="arch-layer">
           <div class="arch-layer-title">
-            <span class="lang-en">Platform Infrastructure</span>
-            <span class="lang-cn">平台基础设施</span>
+            <span class="lang-en">CI/CD & Release Automation (237+ commits)</span>
+            <span class="lang-cn">CI/CD 与发布自动化 (237+ 次提交)</span>
           </div>
           <div class="arch-boxes">
-            <div class="arch-box green">Kubernetes Clusters</div>
-            <div class="arch-box green">Prometheus Monitoring</div>
-            <div class="arch-box green">Grafana Dashboards</div>
-            <div class="arch-box green">ELK Logging</div>
+            <div class="arch-box green">release (139)</div>
+            <div class="arch-box green">release-tests / ERT (74)</div>
+            <div class="arch-box green">jenkins-jcasc-n (24)</div>
+            <div class="arch-box green">flexy-templates (28)</div>
           </div>
         </div>
-        <div class="arch-arrow">&#9660; Metrics | Alerts | SLI/SLO | Capacity Planning</div>
+        <div class="arch-arrow">&#9660; <span class="lang-en">Prow Jobs | Jenkins Pipelines | Release Gating | Deployment</span><span class="lang-cn">Prow 任务 | Jenkins 流水线 | 发布门控 | 部署</span></div>
 
         <div class="arch-layer">
           <div class="arch-layer-title">
-            <span class="lang-en">Cloud Providers</span>
-            <span class="lang-cn">云服务商</span>
+            <span class="lang-en">Performance & AI Diagnostics</span>
+            <span class="lang-cn">性能与 AI 诊断</span>
           </div>
           <div class="arch-boxes">
-            <div class="arch-box orange">AWS (EC2/EKS/S3)</div>
-            <div class="arch-box orange">Azure (AKS)</div>
-            <div class="arch-box orange">GCP (GKE)</div>
-            <div class="arch-box orange">On-Prem/Bare Metal</div>
+            <div class="arch-box orange">kube-burner-ocp (2)</div>
+            <div class="arch-box orange">e2e-benchmarking (3)</div>
+            <div class="arch-box orange">orion (2)</div>
+            <div class="arch-box orange">k8sgpt (4)</div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="grid-3" style="margin-top: 2rem;">
-      <div class="design-highlight">
-        <h4><span class="lang-en">Operator Pattern: Reconcile Loop</span><span class="lang-cn">Operator 模式：Reconcile Loop</span></h4>
-        <ul>
-          <li><span class="lang-en">CRD defines desired state, Controller watches and reconciles</span><span class="lang-cn">CRD 定义期望状态，Controller 监听并调谐</span></li>
-          <li><span class="lang-en">Informer-based caching for efficient API server communication</span><span class="lang-cn">基于 Informer 的缓存实现高效 API Server 通信</span></li>
-          <li><span class="lang-en">Finalizer ensures cleanup before resource deletion</span><span class="lang-cn">Finalizer 确保资源删除前的清理工作</span></li>
-          <li><span class="lang-en">Admission Webhooks for validation and mutation</span><span class="lang-cn">Admission Webhooks 实现验证和变更</span></li>
-        </ul>
-      </div>
-      <div class="design-highlight">
-        <h4><span class="lang-en">CI/CD: Jenkins to Prow Migration</span><span class="lang-cn">CI/CD：Jenkins 到 Prow 迁移</span></h4>
-        <ul>
-          <li><span class="lang-en">Migrated from Jenkins to Kubernetes-native Prow</span><span class="lang-cn">从 Jenkins 迁移到 Kubernetes 原生 Prow</span></li>
-          <li><span class="lang-en">Multi-arch pipeline (amd64, arm64, ppc64le, s390x)</span><span class="lang-cn">多架构流水线 (amd64, arm64, ppc64le, s390x)</span></li>
-          <li><span class="lang-en">129 PRs to openshift/release for pipeline configuration</span><span class="lang-cn">向 openshift/release 贡献 129 个流水线配置 PR</span></li>
-          <li><span class="lang-en">Reduced infrastructure costs by 40%</span><span class="lang-cn">基础设施成本降低 40%</span></li>
-        </ul>
-      </div>
-      <div class="design-highlight">
-        <h4><span class="lang-en">Reliability: Distributed System Debugging</span><span class="lang-cn">可靠性：分布式系统调试</span></h4>
-        <ul>
-          <li><span class="lang-en">Fixed TOCTOU race conditions in Operator reconcile loops</span><span class="lang-cn">修复 Operator Reconcile Loop 中的 TOCTOU 竞态条件</span></li>
-          <li><span class="lang-en">Fixed nil pointer dereferences in sortUnpackJobs</span><span class="lang-cn">修复 sortUnpackJobs 中的空指针解引用</span></li>
-          <li><span class="lang-en">Fixed leader election failures in SNO clusters</span><span class="lang-cn">修复单节点集群中的 Leader Election 失败</span></li>
-          <li><span class="lang-en">Added retry logic for edge-case cluster detection</span><span class="lang-cn">为边界条件集群检测添加重试逻辑</span></li>
-        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Key Projects & Contributions -->
-<section class="section">
+<!-- Key Projects -->
+<section class="section" style="background: rgba(52,211,153,0.02);">
   <div class="container">
     <div class="section-title"><span class="icon">&#x1F4BC;</span>
-      <span class="lang-en">Key Projects &amp; Open Source Contributions</span>
-      <span class="lang-cn">核心项目与开源贡献</span>
+      <span class="lang-en">Key Projects (by Commit Volume)</span>
+      <span class="lang-cn">核心项目（按提交量排序）</span>
     </div>
     <div class="section-subtitle">
-      <span class="lang-en">322 merged PRs across the Kubernetes and OpenShift ecosystem</span>
-      <span class="lang-cn">跨 Kubernetes 和 OpenShift 生态系统的 322 个合并 PR</span>
+      <span class="lang-en">Detailed breakdown of major repositories with notable contributions</span>
+      <span class="lang-cn">主要仓库的详细贡献分析</span>
     </div>
 
-    <!-- Project 1: openshift/release -->
+    <!-- 1. openshift-tests-private -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <div class="project-name">OpenShift Tests Private</div>
+          <div class="project-org">openshift/openshift-tests-private</div>
+        </div>
+        <div class="project-commit-count">459 commits &middot; +384,703 lines</div>
+      </div>
+      <div class="project-desc">
+        <span class="lang-en">Largest single-repo contribution. Built comprehensive E2E test automation for OLM (Operator Lifecycle Manager) covering operator installation, upgrade, subscription, catalog management, and multi-architecture validation. Developed OLMv1 test suites with long-duration test infrastructure and Python-based test runners.</span>
+        <span class="lang-cn">最大的单仓库贡献。为 OLM（Operator Lifecycle Manager）构建全面的 E2E 测试自动化，覆盖 Operator 安装、升级、订阅、Catalog 管理和多架构验证。开发 OLMv1 测试套件，包括长时间测试基础设施和基于 Python 的测试运行器。</span>
+      </div>
+      <div class="project-contributions">
+        <span class="contribution-chip">OLM E2E Suite</span>
+        <span class="contribution-chip">OLMv1 Testing</span>
+        <span class="contribution-chip">Long-Duration Tests</span>
+        <span class="contribution-chip">FIPS Validation</span>
+        <span class="contribution-chip">Multi-Arch</span>
+        <span class="contribution-chip">Upgrade Tests</span>
+      </div>
+    </div>
+
+    <!-- 2. operator-framework-operator-controller -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <div class="project-name"><span class="lang-en">Operator Framework Operator Controller (Downstream)</span><span class="lang-cn">Operator Framework Operator Controller（下游）</span></div>
+          <div class="project-org">openshift/operator-framework-operator-controller</div>
+        </div>
+        <div class="project-commit-count">224 commits &middot; +24,147 lines</div>
+      </div>
+      <div class="project-desc">
+        <span class="lang-en">Major contributor to the OLMv1 downstream integration in OpenShift. Managed carry patches for multi-arch support, TechPreview cluster compatibility, long-duration test scripts, and FIPS compliance. Ensured upstream OLMv1 features are properly integrated and tested in the OpenShift product.</span>
+        <span class="lang-cn">OpenShift 中 OLMv1 下游集成的主要贡献者。管理多架构支持、TechPreview 集群兼容性、长时间测试脚本和 FIPS 合规的 carry 补丁。确保上游 OLMv1 功能在 OpenShift 产品中的正确集成和测试。</span>
+      </div>
+      <div class="project-contributions">
+        <span class="contribution-chip">Carry Patch Management</span>
+        <span class="contribution-chip">Multi-Arch Support</span>
+        <span class="contribution-chip">TechPreview Testing</span>
+        <span class="contribution-chip">FIPS Compliance</span>
+        <span class="contribution-chip">Long-Duration Tests</span>
+      </div>
+    </div>
+
+    <!-- 3. openshift/release -->
     <div class="project-card">
       <div class="project-header">
         <div>
           <div class="project-name"><span class="lang-en">Release CI/CD Configuration</span><span class="lang-cn">发布 CI/CD 配置</span></div>
           <div class="project-org">openshift/release</div>
         </div>
-        <div class="project-commit-count">129 merged PRs</div>
+        <div class="project-commit-count">139 commits &middot; +7,743 / -1,339 lines</div>
       </div>
       <div class="project-desc">
-        <span class="lang-en">Designed and maintained Prow-based CI/CD pipeline configurations for OpenShift release testing. Set up multi-architecture job controllers, release gate testing, catalog source management, and automated release pipelines across OCP 4.x versions. Led the Jenkins-to-Prow migration reducing costs by 40%.</span>
-        <span class="lang-cn">为 OpenShift 发布测试设计并维护基于 Prow 的 CI/CD 流水线配置。建立多架构 Job Controller、发布门控测试、Catalog Source 管理及跨 OCP 4.x 版本的自动化发布流水线。主导 Jenkins 到 Prow 迁移，成本降低 40%。</span>
+        <span class="lang-en">Designed and maintained Prow-based CI/CD pipeline configurations for OpenShift release testing across OCP 4.x versions. Set up multi-architecture (amd64, arm64, ppc64le, s390x) job controllers, QE release gate testing, catalog source management, SNO upgrade testing, and automated release chain workflows. Led the Jenkins-to-Prow migration that reduced infrastructure costs by 40%.</span>
+        <span class="lang-cn">为跨 OCP 4.x 版本的 OpenShift 发布测试设计并维护基于 Prow 的 CI/CD 流水线配置。建立多架构 (amd64, arm64, ppc64le, s390x) Job Controller、QE 发布门控测试、Catalog Source 管理、SNO 升级测试和自动化发布链工作流。主导 Jenkins 到 Prow 迁移，成本降低 40%。</span>
       </div>
       <div class="project-contributions">
         <span class="contribution-chip">Prow Job Config</span>
         <span class="contribution-chip">Multi-Arch Pipeline</span>
-        <span class="contribution-chip">Auto Release Chain</span>
-        <span class="contribution-chip">Stage/Gate Testing</span>
-        <span class="contribution-chip">Cost Optimization</span>
+        <span class="contribution-chip">Release Gate Testing</span>
+        <span class="contribution-chip">SNO Upgrade</span>
+        <span class="contribution-chip">Approver</span>
       </div>
     </div>
 
-    <!-- Project 2: ERT Release Tests -->
+    <!-- 4. release-tests (ERT) -->
     <div class="project-card">
       <div class="project-header">
         <div>
           <div class="project-name"><span class="lang-en">ERT Automation Framework</span><span class="lang-cn">ERT 自动化框架</span></div>
           <div class="project-org">openshift/release-tests</div>
         </div>
-        <div class="project-commit-count">40 merged PRs</div>
+        <div class="project-commit-count">74 commits &middot; +1,455 / -678 lines</div>
       </div>
       <div class="project-desc">
-        <span class="lang-en">Designed and built the ERT automation framework automating the entire OpenShift end-to-end release pipeline. Orchestrates release lifecycle management, test verification, and deployment safety across the product delivery chain. Powers the release process for every OpenShift z-stream release.</span>
-        <span class="lang-cn">设计并构建 ERT 自动化框架，实现 OpenShift 端到端发布流水线的全自动化。编排发布生命周期管理、测试验证和部署安全。为每个 OpenShift z-stream 版本的发布流程提供支持。</span>
+        <span class="lang-en">Designed and built the ERT automation framework that automates the entire OpenShift end-to-end release pipeline. Orchestrates release lifecycle management, test verification, deployment safety, and approval workflows across the complete product delivery chain. Powers the release process for every OpenShift z-stream release.</span>
+        <span class="lang-cn">设计并构建 ERT 自动化框架，实现 OpenShift 端到端发布流水线的全自动化。编排发布生命周期管理、测试验证、部署安全和审批工作流。为每个 OpenShift z-stream 版本的发布流程提供支持。</span>
       </div>
       <div class="project-contributions">
-        <span class="contribution-chip">Release Pipeline Automation</span>
-        <span class="contribution-chip">End-to-End Orchestration</span>
+        <span class="contribution-chip">Release Orchestration</span>
+        <span class="contribution-chip">End-to-End Automation</span>
         <span class="contribution-chip">Deployment Safety</span>
-        <span class="contribution-chip">Test Verification</span>
+        <span class="contribution-chip">Code Quality (pylint)</span>
       </div>
     </div>
 
-    <!-- Project 3: OLM -->
+    <!-- 5. operator-lifecycle-manager -->
     <div class="project-card">
       <div class="project-header">
         <div>
-          <div class="project-name">Operator Lifecycle Manager</div>
+          <div class="project-name">Operator Lifecycle Manager (Upstream)</div>
           <div class="project-org">operator-framework/operator-lifecycle-manager</div>
         </div>
-        <div class="project-commit-count">14 merged PRs</div>
+        <div class="project-commit-count">15 commits &middot; +2,242 / -327 lines</div>
       </div>
       <div class="project-desc">
-        <span class="lang-en">Core contributor to OLM upstream. Fixed critical production bugs including nil pointer dereferences in sortUnpackJobs, server startup failures with empty client-ca, WatchListClient unit test timeouts, and OpenAPIModelName issues for PackageManifest API compatibility.</span>
-        <span class="lang-cn">OLM 上游核心贡献者。修复关键生产 Bug，包括 sortUnpackJobs 空指针解引用、空 client-ca 导致的服务启动失败、WatchListClient 单元测试超时，以及 PackageManifest API 兼容性的 OpenAPIModelName 问题。</span>
+        <span class="lang-en">Core upstream contributor. Fixed critical production bugs: nil pointer dereference in sortUnpackJobs, CRD validation to only validate CRs against storage version schema, server startup failures with empty client-ca, WatchListClient envtest timeouts, OpenAPIModelName for PackageManifest API, and TOCTOU race conditions in ensureInstallPlan.</span>
+        <span class="lang-cn">核心上游贡献者。修复关键生产 Bug：sortUnpackJobs 空指针解引用、CRD 验证仅对存储版本 Schema 验证 CR、空 client-ca 服务启动失败、WatchListClient envtest 超时、PackageManifest API 的 OpenAPIModelName、ensureInstallPlan 中的 TOCTOU 竞态条件。</span>
       </div>
       <div class="project-contributions">
         <span class="contribution-chip">Nil Pointer Fix</span>
-        <span class="contribution-chip">Server Startup Fix</span>
+        <span class="contribution-chip">CRD Validation Fix</span>
+        <span class="contribution-chip">TOCTOU Race Fix</span>
+        <span class="contribution-chip">OpenAPI Fix</span>
         <span class="contribution-chip">WatchListClient Fix</span>
-        <span class="contribution-chip">OpenAPI Compatibility</span>
-        <span class="contribution-chip">Leader Election Fix</span>
+        <span class="contribution-chip">Server Startup Fix</span>
       </div>
     </div>
 
-    <!-- Project 4: openshift/openshift-tests -->
-    <div class="project-card">
-      <div class="project-header">
-        <div>
-          <div class="project-name"><span class="lang-en">OpenShift E2E Test Suite</span><span class="lang-cn">OpenShift E2E 测试套件</span></div>
-          <div class="project-org">openshift/openshift-tests</div>
-        </div>
-        <div class="project-commit-count">18 merged PRs</div>
-      </div>
-      <div class="project-desc">
-        <span class="lang-en">Major contributor to the OpenShift end-to-end test framework. Developed comprehensive test automation for Operator Lifecycle Manager covering installation, upgrade, subscription, catalog management, and multi-architecture support. Tests run across every OpenShift release.</span>
-        <span class="lang-cn">OpenShift 端到端测试框架的主要贡献者。为 Operator Lifecycle Manager 开发全面的测试自动化，覆盖安装、升级、订阅、Catalog 管理和多架构支持。测试在每个 OpenShift 版本中运行。</span>
-      </div>
-      <div class="project-contributions">
-        <span class="contribution-chip">OLM E2E Tests</span>
-        <span class="contribution-chip">Multi-Arch Support</span>
-        <span class="contribution-chip">FIPS Cluster Testing</span>
-        <span class="contribution-chip">Upgrade Verification</span>
-      </div>
-    </div>
-
-    <!-- Project 5: operator-framework-olm (downstream) -->
+    <!-- 6. operator-framework-olm (downstream) -->
     <div class="project-card">
       <div class="project-header">
         <div>
           <div class="project-name"><span class="lang-en">OLM Downstream (OpenShift)</span><span class="lang-cn">OLM 下游 (OpenShift)</span></div>
           <div class="project-org">openshift/operator-framework-olm</div>
         </div>
-        <div class="project-commit-count">12 merged PRs</div>
+        <div class="project-commit-count">17 commits &middot; +264 / -82 lines</div>
       </div>
       <div class="project-desc">
-        <span class="lang-en">Maintained and stabilized the downstream OLM integration for OpenShift. Backported critical fixes across multiple release branches (4.19, 4.21), added leader election retry logic for SNO clusters, automated TLS profile consistency testing, and ensured FIPS compliance.</span>
-        <span class="lang-cn">维护和稳定 OpenShift 的下游 OLM 集成。跨多个发布分支 (4.19, 4.21) 回移关键修复，为单节点集群添加 Leader Election 重试逻辑，自动化 TLS Profile 一致性测试，确保 FIPS 合规。</span>
+        <span class="lang-en">Maintained downstream OLM for OpenShift. Fixed TOCTOU race condition in ensureInstallPlan, backported critical fixes across release branches, added leader election retry logic for SNO clusters, automated TLS profile consistency testing, and ensured FIPS compliance for cluster environments.</span>
+        <span class="lang-cn">维护 OpenShift 的下游 OLM。修复 ensureInstallPlan 中的 TOCTOU 竞态条件，跨发布分支回移关键修复，为 SNO 集群添加 Leader Election 重试逻辑，自动化 TLS Profile 一致性测试，确保集群环境 FIPS 合规。</span>
       </div>
       <div class="project-contributions">
-        <span class="contribution-chip">Cross-Branch Backports</span>
+        <span class="contribution-chip">TOCTOU Race Fix</span>
         <span class="contribution-chip">SNO Leader Election</span>
-        <span class="contribution-chip">TLS Profile Testing</span>
+        <span class="contribution-chip">TLS Testing</span>
         <span class="contribution-chip">FIPS Compliance</span>
+        <span class="contribution-chip">Cross-Branch Backport</span>
       </div>
     </div>
 
-    <!-- Project 6: operator-controller -->
+    <!-- 7. k8sgpt -->
     <div class="project-card">
       <div class="project-header">
         <div>
-          <div class="project-name"><span class="lang-en">Operator Controller (OLMv1)</span><span class="lang-cn">Operator Controller (OLMv1)</span></div>
-          <div class="project-org">operator-framework/operator-controller + openshift/operator-framework-operator-controller</div>
-        </div>
-        <div class="project-commit-count">16 merged PRs</div>
-      </div>
-      <div class="project-desc">
-        <span class="lang-en">Early contributor to OLMv1 (next-generation Operator Lifecycle Manager). Fixed deployment replica configurability via Helm values, test configuration conflicts, vendor mode compatibility, and added long-duration test scripts and multi-arch support for TechPreview clusters.</span>
-        <span class="lang-cn">OLMv1（新一代 Operator Lifecycle Manager）早期贡献者。修复通过 Helm values 配置部署副本数、测试配置冲突、vendor 模式兼容性，并添加长时间测试脚本和 TechPreview 集群的多架构支持。</span>
-      </div>
-      <div class="project-contributions">
-        <span class="contribution-chip">Helm Values Config</span>
-        <span class="contribution-chip">Multi-Arch Testing</span>
-        <span class="contribution-chip">Long-Duration Tests</span>
-        <span class="contribution-chip">Vendor Mode Fix</span>
-      </div>
-    </div>
-
-    <!-- Project 7: k8sgpt -->
-    <div class="project-card">
-      <div class="project-header">
-        <div>
-          <div class="project-name">k8sgpt</div>
+          <div class="project-name">k8sgpt — AI-Powered Kubernetes Diagnostics</div>
           <div class="project-org">k8sgpt-ai/k8sgpt</div>
         </div>
-        <div class="project-commit-count">4 merged PRs</div>
+        <div class="project-commit-count">4 commits &middot; +843 / -52 lines</div>
       </div>
       <div class="project-desc">
-        <span class="lang-en">Contributed AI-powered Kubernetes diagnostics analyzers. Added ClusterCatalog and ClusterExtension analyzers for OLM resources, enabling AI-driven troubleshooting of operator installation and lifecycle issues. Fixed kubeconfig handling and default values.</span>
-        <span class="lang-cn">贡献 AI 驱动的 Kubernetes 诊断分析器。为 OLM 资源添加 ClusterCatalog 和 ClusterExtension 分析器，实现 Operator 安装和生命周期问题的 AI 驱动故障排查。修复 kubeconfig 处理和默认值。</span>
+        <span class="lang-en">Contributed AI-powered OLM analyzers for automated Kubernetes diagnostics. Implemented ClusterCatalog and ClusterExtension analyzers that detect operator installation failures, catalog sync issues, and extension lifecycle problems — providing AI-driven remediation suggestions through natural language.</span>
+        <span class="lang-cn">为自动化 Kubernetes 诊断贡献 AI 驱动的 OLM 分析器。实现 ClusterCatalog 和 ClusterExtension 分析器，检测 Operator 安装失败、Catalog 同步问题和扩展生命周期问题 — 通过自然语言提供 AI 驱动的修复建议。</span>
       </div>
       <div class="project-contributions">
         <span class="contribution-chip">ClusterCatalog Analyzer</span>
         <span class="contribution-chip">ClusterExtension Analyzer</span>
         <span class="contribution-chip">AI Diagnostics</span>
-        <span class="contribution-chip">Bug Fixes</span>
+        <span class="contribution-chip">kubeconfig Fix</span>
       </div>
     </div>
 
-    <!-- Project 8: kube-burner -->
+    <!-- 8. kube-burner -->
     <div class="project-card">
       <div class="project-header">
         <div>
-          <div class="project-name">kube-burner</div>
-          <div class="project-org">kube-burner/kube-burner + kube-burner/kube-burner-ocp</div>
+          <div class="project-name"><span class="lang-en">Performance Benchmarking</span><span class="lang-cn">性能基准测试</span></div>
+          <div class="project-org">kube-burner/* + cloud-bulldozer/* + orion</div>
         </div>
-        <div class="project-commit-count">3 merged PRs</div>
+        <div class="project-commit-count">8 commits</div>
       </div>
       <div class="project-desc">
-        <span class="lang-en">Designed performance benchmark workloads for Kubernetes/OpenShift platform scalability testing. Created OCP-specific benchmark scenarios for regression detection and capacity planning across cloud and on-premises environments.</span>
-        <span class="lang-cn">为 Kubernetes/OpenShift 平台可扩展性测试设计性能基准工作负载。创建 OCP 特定的基准测试场景，用于回归检测和跨云及本地环境的容量规划。</span>
+        <span class="lang-en">Designed OLMv1 performance benchmark workloads for kube-burner-ocp. Created ClusterExtension churn mode workloads, contributed OLMv1 GCP benchmark examples to Orion, and maintained e2e-benchmarking iterations. Fixed nil pointer issue in kube-burner core.</span>
+        <span class="lang-cn">为 kube-burner-ocp 设计 OLMv1 性能基准工作负载。创建 ClusterExtension churn 模式工作负载，为 Orion 贡献 OLMv1 GCP 基准示例，维护 e2e-benchmarking 迭代。修复 kube-burner 核心空指针问题。</span>
       </div>
       <div class="project-contributions">
-        <span class="contribution-chip">Performance Benchmarks</span>
-        <span class="contribution-chip">Scalability Testing</span>
-        <span class="contribution-chip">Capacity Planning</span>
+        <span class="contribution-chip">OLMv1 Workloads</span>
+        <span class="contribution-chip">Churn Mode</span>
+        <span class="contribution-chip">GCP Benchmarks</span>
+        <span class="contribution-chip">Nil Pointer Fix</span>
       </div>
     </div>
 
-    <!-- Project 9: Kubernetes upstream -->
+    <!-- 10. operator-controller upstream -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <div class="project-name"><span class="lang-en">Operator Controller (Upstream OLMv1)</span><span class="lang-cn">Operator Controller（上游 OLMv1）</span></div>
+          <div class="project-org">operator-framework/operator-controller</div>
+        </div>
+        <div class="project-commit-count">5 commits &middot; +286 / -30 lines</div>
+      </div>
+      <div class="project-desc">
+        <span class="lang-en">Early contributor to the next-generation OLM (OLMv1). Made deployments HA-ready with configurable replica count via Helm values. Fixed TestParseSubscriptionConfig for vendor mode compatibility and resolved testCatalogName conflicts in parallel e2e tests.</span>
+        <span class="lang-cn">新一代 OLM (OLMv1) 早期贡献者。通过 Helm values 实现可配置副本数使部署 HA 就绪。修复 vendor 模式兼容性的 TestParseSubscriptionConfig 和并行 E2E 测试中的 testCatalogName 冲突。</span>
+      </div>
+      <div class="project-contributions">
+        <span class="contribution-chip">HA-Ready Deployments</span>
+        <span class="contribution-chip">Helm Values Config</span>
+        <span class="contribution-chip">Vendor Mode Fix</span>
+        <span class="contribution-chip">Parallel Test Fix</span>
+      </div>
+    </div>
+
+    <!-- 11. Kubernetes -->
     <div class="project-card">
       <div class="project-header">
         <div>
           <div class="project-name">Kubernetes</div>
-          <div class="project-org">kubernetes/kubernetes + k8smeetup/kubernetes.github.io</div>
+          <div class="project-org">kubernetes/kubernetes + k8smeetup docs</div>
         </div>
-        <div class="project-commit-count">13 merged PRs</div>
+        <div class="project-commit-count">17 commits</div>
       </div>
       <div class="project-desc">
-        <span class="lang-en">Contributed to Kubernetes upstream: parameterized binary paths for hyperkube image builds, fixed conversion logging. Led Chinese documentation translation effort with 11 articles translated for the Kubernetes Chinese community.</span>
-        <span class="lang-cn">Kubernetes 上游贡献：参数化 hyperkube 镜像构建的二进制路径、修复转换日志。主导中文文档翻译工作，为 Kubernetes 中文社区翻译 11 篇技术文章。</span>
+        <span class="lang-en">Upstream Kubernetes contributor since 2015. Worked on GPU scheduling at IBM China Research Lab. Contributed hyperkube image parameterization, dependency pinning, vendor updates, and conversion logging fixes. Led Chinese documentation translation (11 articles) for the Kubernetes community.</span>
+        <span class="lang-cn">自 2015 年起的上游 Kubernetes 贡献者。在 IBM 中国研究院从事 GPU 调度工作。贡献 hyperkube 镜像参数化、依赖固定、vendor 更新和转换日志修复。主导 Kubernetes 社区中文文档翻译（11 篇文章）。</span>
       </div>
       <div class="project-contributions">
+        <span class="contribution-chip">GPU Scheduling</span>
         <span class="contribution-chip">Upstream Code</span>
-        <span class="contribution-chip">Chinese Docs (11 articles)</span>
-        <span class="contribution-chip">Community Building</span>
-      </div>
-    </div>
-
-    <!-- Project 10: cluster-olm-operator -->
-    <div class="project-card">
-      <div class="project-header">
-        <div>
-          <div class="project-name">Cluster OLM Operator</div>
-          <div class="project-org">openshift/cluster-olm-operator</div>
-        </div>
-        <div class="project-commit-count">4 merged PRs</div>
-      </div>
-      <div class="project-desc">
-        <span class="lang-en">Contributed to the cluster-level OLM operator that manages OLM components in OpenShift. Added PodDisruptionBudget RBAC permissions, fixed CI linting timeouts, and became an Approver on the repository.</span>
-        <span class="lang-cn">贡献集群级 OLM Operator，管理 OpenShift 中的 OLM 组件。添加 PodDisruptionBudget RBAC 权限，修复 CI Lint 超时，成为该仓库的 Approver。</span>
-      </div>
-      <div class="project-contributions">
-        <span class="contribution-chip">PDB RBAC</span>
-        <span class="contribution-chip">CI Fix</span>
-        <span class="contribution-chip">Repository Approver</span>
+        <span class="contribution-chip">Chinese Docs (11)</span>
+        <span class="contribution-chip">Vendor Updates</span>
       </div>
     </div>
 
@@ -674,199 +652,156 @@ html { scroll-behavior: smooth; }
     <div class="project-card">
       <div class="project-header">
         <div>
-          <div class="project-name"><span class="lang-en">Cross-Repository Contributions</span><span class="lang-cn">跨仓库贡献</span></div>
-          <div class="project-org">openshift/origin · openshift/sippy · cloud-bulldozer · openshift-qe · more</div>
+          <div class="project-name"><span class="lang-en">Other Notable Repositories</span><span class="lang-cn">其他值得注意的仓库</span></div>
+          <div class="project-org"><span class="lang-en">15+ additional repos</span><span class="lang-cn">15+ 个额外仓库</span></div>
         </div>
-        <div class="project-commit-count">30+ merged PRs</div>
+        <div class="project-commit-count">101 commits</div>
       </div>
       <div class="project-desc">
-        <span class="lang-en">Contributions spanning the broader OpenShift and Kubernetes ecosystem: OpenShift Origin test infrastructure, Sippy CI analysis dashboard, cloud-bulldozer performance testing (e2e-benchmarking, Orion), operator-marketplace, verification-tests, community-operators-prod, and Ansible playbooks.</span>
-        <span class="lang-cn">跨 OpenShift 和 Kubernetes 生态系统的广泛贡献：OpenShift Origin 测试基础设施、Sippy CI 分析看板、cloud-bulldozer 性能测试 (e2e-benchmarking, Orion)、operator-marketplace、verification-tests、community-operators-prod 及 Ansible Playbooks。</span>
+        <span class="lang-en">
+          <strong>learn-operator</strong> (29) — Built a sample operator for learning CRD/Controller/Webhook patterns, index image creation, FIPS compliance testing.
+          <strong>flexy-templates</strong> (28) — Infrastructure provisioning templates including OLM catalog sources, PSA configuration.
+          <strong>jenkins-jcasc-n</strong> (24) — Jenkins pipeline libraries for release automation and monitoring.
+          <strong>origin</strong> (8) — OpenShift core: OperatorHub metrics, feature set detection, OLM version checking.
+          <strong>library-go</strong> — Fixed DeploymentController to comply with OpenShift Available API contract.
+          <strong>md2pdf</strong> — Markdown to PDF converter with CJK support.
+          <strong>ci-tools</strong> — payload-job-with-prs testing, sippy/testgrid integration.
+          <strong>sippy</strong> — OLM performance suites allowlisting.
+        </span>
+        <span class="lang-cn">
+          <strong>learn-operator</strong> (29) — 构建示例 Operator 学习 CRD/Controller/Webhook 模式，Index Image 创建，FIPS 合规测试。
+          <strong>flexy-templates</strong> (28) — 基础设施配置模板，包括 OLM Catalog Sources、PSA 配置。
+          <strong>jenkins-jcasc-n</strong> (24) — 发布自动化和监控的 Jenkins 流水线库。
+          <strong>origin</strong> (8) — OpenShift 核心：OperatorHub 指标、Feature Set 检测、OLM 版本检查。
+          <strong>library-go</strong> — 修复 DeploymentController 以符合 OpenShift Available API 约定。
+          <strong>md2pdf</strong> — 支持 CJK 的 Markdown 转 PDF 工具。
+          <strong>ci-tools</strong> — payload-job-with-prs 测试、sippy/testgrid 集成。
+          <strong>sippy</strong> — OLM 性能测试套件白名单。
+        </span>
       </div>
       <div class="project-contributions">
-        <span class="contribution-chip">OpenShift Origin</span>
-        <span class="contribution-chip">Sippy Dashboard</span>
-        <span class="contribution-chip">Performance Testing</span>
-        <span class="contribution-chip">Marketplace</span>
-        <span class="contribution-chip">Community Operators</span>
+        <span class="contribution-chip">learn-operator</span>
+        <span class="contribution-chip">flexy-templates</span>
+        <span class="contribution-chip">Jenkins Pipelines</span>
+        <span class="contribution-chip">Origin Core</span>
+        <span class="contribution-chip">library-go</span>
+        <span class="contribution-chip">CI Tools</span>
+        <span class="contribution-chip">Sippy</span>
+        <span class="contribution-chip">md2pdf</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Technical Design Highlights -->
-<section class="section" style="background: rgba(52,211,153,0.02);">
+<!-- Technical Deep Dives -->
+<section class="section">
   <div class="container">
     <div class="section-title"><span class="icon">&#x1F4A1;</span>
       <span class="lang-en">Technical Deep Dives</span>
       <span class="lang-cn">技术深度解析</span>
     </div>
     <div class="section-subtitle">
-      <span class="lang-en">Notable engineering problems solved and design decisions made</span>
-      <span class="lang-cn">解决的关键工程问题与设计决策</span>
+      <span class="lang-en">Notable bugs fixed, features built, and engineering decisions — with commit evidence</span>
+      <span class="lang-cn">修复的关键 Bug、构建的功能和工程决策 — 附提交证据</span>
     </div>
-
     <div class="grid-2">
       <div class="card">
-        <h3><span class="lang-en">Nil Pointer in sortUnpackJobs</span><span class="lang-cn">sortUnpackJobs 空指针修复</span></h3>
-        <p><span class="lang-en">Discovered and fixed a nil pointer dereference in OLM's sortUnpackJobs function when sorting non-failed jobs. The sort comparator accessed BundleLookup.Conditions without nil-checking, causing panics during operator catalog unpacking. Fixed upstream and backported across 4.19 and 4.21 release branches.</span><span class="lang-cn">发现并修复 OLM sortUnpackJobs 函数中排序非失败 Job 时的空指针解引用。排序比较器未做 nil 检查即访问 BundleLookup.Conditions，导致 Operator Catalog 解包时 panic。修复上游并回移到 4.19 和 4.21 发布分支。</span></p>
-        <div class="tech-stack"><span class="tech-tag go">Go</span><span class="tech-tag">OLM</span><span class="tech-tag">Production Bug</span></div>
+        <h3><span class="lang-en">TOCTOU Race in ensureInstallPlan</span><span class="lang-cn">ensureInstallPlan 中的 TOCTOU 竞态</span></h3>
+        <p><span class="lang-en">Discovered a Time-of-Check-to-Time-of-Use race condition in OLM's ensureInstallPlan. The function checked if an InstallPlan existed, then created one — but between check and create, another reconcile loop could create a duplicate. Fixed with atomic create-or-get pattern. Backported to downstream.</span><span class="lang-cn">发现 OLM ensureInstallPlan 中的 TOCTOU 竞态条件。函数先检查 InstallPlan 是否存在再创建，但在检查和创建之间，另一个 Reconcile Loop 可能创建重复。用原子 create-or-get 模式修复。回移到下游。</span></p>
+        <div class="tech-stack"><span class="tech-tag go">Go</span><span class="tech-tag">Race Condition</span><span class="tech-tag">OLM</span></div>
       </div>
       <div class="card">
-        <h3><span class="lang-en">Leader Election Retry for SNO</span><span class="lang-cn">单节点集群 Leader Election 重试</span></h3>
-        <p><span class="lang-en">Added retry logic for Single Node OpenShift (SNO) cluster detection in leader election configuration. The original code failed silently when the infrastructure API wasn't immediately available during bootstrap, causing leader election misconfiguration. Implemented exponential backoff retry with proper error propagation.</span><span class="lang-cn">为单节点 OpenShift (SNO) 集群检测添加 Leader Election 配置重试逻辑。原始代码在引导期间基础设施 API 不可用时静默失败，导致 Leader Election 配置错误。实现指数退避重试和正确的错误传播。</span></p>
-        <div class="tech-stack"><span class="tech-tag go">Go</span><span class="tech-tag">Leader Election</span><span class="tech-tag">SNO</span></div>
+        <h3><span class="lang-en">CRD Validation: Storage Version Only</span><span class="lang-cn">CRD 验证：仅存储版本</span></h3>
+        <p><span class="lang-en">Fixed CRD validation to only validate Custom Resources against the storage version schema, not all served versions. The previous behavior caused false validation failures when CRDs had multiple versions with different schemas, blocking operator installations.</span><span class="lang-cn">修复 CRD 验证仅对存储版本 Schema 验证 Custom Resources，而非所有服务版本。之前的行为在 CRD 有多个不同 Schema 版本时导致虚假验证失败，阻断 Operator 安装。</span></p>
+        <div class="tech-stack"><span class="tech-tag go">Go</span><span class="tech-tag">CRD</span><span class="tech-tag">Validation</span></div>
       </div>
       <div class="card">
-        <h3><span class="lang-en">OpenAPIModelName for PackageManifest</span><span class="lang-cn">PackageManifest OpenAPI 模型名</span></h3>
-        <p><span class="lang-en">Fixed `oc explain` broken for PackageManifest resources by adding OpenAPIModelName annotations to all PackageManifest-related types. Without these, the OpenAPI schema generator couldn't match CRD types to their documentation, making the API unexplorable for operators.</span><span class="lang-cn">通过为所有 PackageManifest 相关类型添加 OpenAPIModelName 注解，修复 `oc explain` 对 PackageManifest 资源的支持。缺少这些注解时，OpenAPI Schema 生成器无法将 CRD 类型与其文档匹配，导致 API 不可探索。</span></p>
-        <div class="tech-stack"><span class="tech-tag go">Go</span><span class="tech-tag">OpenAPI</span><span class="tech-tag">CRD</span></div>
+        <h3><span class="lang-en">HA Deployments via Helm Values</span><span class="lang-cn">通过 Helm Values 实现 HA 部署</span></h3>
+        <p><span class="lang-en">Made OLMv1 operator-controller deployments HA-ready by making replica count configurable through Helm values. Previously hardcoded to 1, this blocked HA deployments. Added proper Helm templating with default value preservation and PDB support.</span><span class="lang-cn">通过 Helm values 使 OLMv1 operator-controller 部署的副本数可配置，实现 HA 就绪。之前硬编码为 1，阻断 HA 部署。添加正确的 Helm 模板化，保留默认值并支持 PDB。</span></p>
+        <div class="tech-stack"><span class="tech-tag go">Go</span><span class="tech-tag">Helm</span><span class="tech-tag">HA</span></div>
       </div>
       <div class="card">
-        <h3><span class="lang-en">WatchListClient Envtest Timeout Fix</span><span class="lang-cn">WatchListClient Envtest 超时修复</span></h3>
-        <p><span class="lang-en">Disabled WatchListClient for envtest-based tests to fix unit test timeouts. The WatchListClient feature gate caused envtest's lightweight API server to hang during list operations, as it doesn't support the streaming list protocol. Identified root cause and applied targeted fix without affecting production behavior.</span><span class="lang-cn">禁用 envtest 测试中的 WatchListClient 以修复单元测试超时。WatchListClient Feature Gate 导致 envtest 的轻量级 API Server 在 list 操作中挂起，因为它不支持流式 list 协议。定位根因并应用针对性修复，不影响生产行为。</span></p>
-        <div class="tech-stack"><span class="tech-tag go">Go</span><span class="tech-tag">envtest</span><span class="tech-tag">Feature Gate</span></div>
+        <h3><span class="lang-en">DeploymentController API Contract Fix</span><span class="lang-cn">DeploymentController API 约定修复</span></h3>
+        <p><span class="lang-en">Fixed DeploymentController in library-go to comply with OpenShift's Available API contract. The controller was incorrectly reporting Available condition, causing cluster operators to show degraded status during normal operations. A subtle but high-impact fix affecting all operators using library-go.</span><span class="lang-cn">修复 library-go 中的 DeploymentController 以符合 OpenShift 的 Available API 约定。控制器错误报告 Available 条件，导致集群 Operator 在正常操作期间显示降级状态。一个微妙但影响广泛的修复，影响所有使用 library-go 的 Operator。</span></p>
+        <div class="tech-stack"><span class="tech-tag go">Go</span><span class="tech-tag">library-go</span><span class="tech-tag">API Contract</span></div>
       </div>
       <div class="card">
-        <h3><span class="lang-en">PodDisruptionBudget RBAC for OLM</span><span class="lang-cn">OLM 的 PDB RBAC 权限</span></h3>
-        <p><span class="lang-en">Added PodDisruptionBudget permissions to the cluster-olm-operator, enabling it to manage PDB resources for high-availability operator deployments. Without these permissions, OLM couldn't ensure operator pods maintained minimum availability during voluntary disruptions like node drains.</span><span class="lang-cn">为 cluster-olm-operator 添加 PodDisruptionBudget 权限，使其能够管理高可用 Operator 部署的 PDB 资源。缺少这些权限时，OLM 无法确保 Operator Pod 在节点驱逐等自愿中断期间保持最小可用性。</span></p>
-        <div class="tech-stack"><span class="tech-tag">RBAC</span><span class="tech-tag">PDB</span><span class="tech-tag">HA</span></div>
+        <h3><span class="lang-en">k8sgpt: OLM Analyzers</span><span class="lang-cn">k8sgpt：OLM 分析器</span></h3>
+        <p><span class="lang-en">Designed ClusterCatalog and ClusterExtension analyzers (+843 lines). Each analyzer queries the Kubernetes API for OLM resources, evaluates status conditions, and generates structured failure descriptions for the AI engine. Covers catalog sync failures, extension resolution errors, and installation timeouts.</span><span class="lang-cn">设计 ClusterCatalog 和 ClusterExtension 分析器 (+843 行)。每个分析器查询 Kubernetes API 获取 OLM 资源，评估状态条件，为 AI 引擎生成结构化故障描述。覆盖 Catalog 同步失败、Extension 解析错误和安装超时。</span></p>
+        <div class="tech-stack"><span class="tech-tag go">Go</span><span class="tech-tag ai">AI</span><span class="tech-tag">k8sgpt</span></div>
       </div>
       <div class="card">
-        <h3><span class="lang-en">k8sgpt: OLM Analyzers for AI Diagnostics</span><span class="lang-cn">k8sgpt：OLM AI 诊断分析器</span></h3>
-        <p><span class="lang-en">Designed and implemented ClusterCatalog and ClusterExtension analyzers for k8sgpt, enabling AI-powered diagnostics for OLM resources. The analyzers detect common failure patterns in operator installations and provide actionable remediation suggestions through natural language.</span><span class="lang-cn">为 k8sgpt 设计并实现 ClusterCatalog 和 ClusterExtension 分析器，实现 OLM 资源的 AI 驱动诊断。分析器检测 Operator 安装中的常见故障模式，通过自然语言提供可操作的修复建议。</span></p>
-        <div class="tech-stack"><span class="tech-tag go">Go</span><span class="tech-tag">AI/ML</span><span class="tech-tag">k8sgpt</span></div>
+        <h3><span class="lang-en">Multi-Arch CI Pipeline Design</span><span class="lang-cn">多架构 CI 流水线设计</span></h3>
+        <p><span class="lang-en">Designed Prow job configurations supporting 4 architectures (amd64, arm64, ppc64le, s390x) across multiple OCP versions. Each architecture has dedicated job controllers, gate testing, and release chains. Includes SNO upgrade testing and optional/retry job policies. 139 commits to openshift/release.</span><span class="lang-cn">设计支持 4 种架构 (amd64, arm64, ppc64le, s390x) 跨多个 OCP 版本的 Prow 任务配置。每种架构有专用 Job Controller、门控测试和发布链。包括 SNO 升级测试和 optional/retry 任务策略。向 openshift/release 贡献 139 次提交。</span></p>
+        <div class="tech-stack"><span class="tech-tag yaml">YAML</span><span class="tech-tag">Prow</span><span class="tech-tag">Multi-Arch</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PR Activity Timeline -->
-<section class="section">
+<!-- Timeline -->
+<section class="section" style="background: rgba(96,165,250,0.02);">
   <div class="container">
     <div class="section-title"><span class="icon">&#x1F4C5;</span>
-      <span class="lang-en">Contribution Timeline</span>
-      <span class="lang-cn">贡献时间线</span>
+      <span class="lang-en">Career &amp; Contribution Timeline</span>
+      <span class="lang-cn">职业与贡献时间线</span>
     </div>
     <div class="section-subtitle">
-      <span class="lang-en">322 merged PRs across 10 years of open-source contributions</span>
-      <span class="lang-cn">跨 10 年开源贡献的 322 个合并 PR</span>
+      <span class="lang-en">11 years of Kubernetes expertise, from IBM Research to Red Hat Principal Engineer</span>
+      <span class="lang-cn">11 年 Kubernetes 专业经验，从 IBM 研究院到红帽首席工程师</span>
     </div>
-
     <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-date">2025 - 2026 (86 PRs)</div>
-        <div class="timeline-title"><span class="lang-en">OLMv1, Production Stability & AI Diagnostics</span><span class="lang-cn">OLMv1、生产稳定性与 AI 诊断</span></div>
-        <div class="timeline-desc"><span class="lang-en">Fixed critical OLM production bugs (nil pointer, leader election, OpenAPI). Contributed to OLMv1 operator-controller. Added k8sgpt AI analyzers for OLM resources. Led long-duration test infrastructure and multi-arch validation. Managed CI pipeline configurations for OCP 4.19-4.21+.</span><span class="lang-cn">修复关键 OLM 生产 Bug（空指针、Leader Election、OpenAPI）。贡献 OLMv1 operator-controller。为 k8sgpt 添加 OLM AI 分析器。主导长时间测试基础设施和多架构验证。管理 OCP 4.19-4.21+ 的 CI 流水线配置。</span></div>
+        <div class="timeline-date">2025 - 2026 &middot; 86 merged PRs</div>
+        <div class="timeline-title"><span class="lang-en">OLMv1 Production Stability &amp; AI Integration</span><span class="lang-cn">OLMv1 生产稳定性与 AI 集成</span></div>
+        <div class="timeline-desc"><span class="lang-en">Fixed critical OLM production bugs (nil pointer, leader election, OpenAPI, WatchListClient). Major OLMv1 downstream integration (224 commits). Added k8sgpt AI analyzers. Built long-duration test infrastructure. Managed multi-arch CI across OCP 4.19-4.21+.</span><span class="lang-cn">修复关键 OLM 生产 Bug（空指针、Leader Election、OpenAPI、WatchListClient）。OLMv1 下游集成（224 次提交）。添加 k8sgpt AI 分析器。构建长时间测试基础设施。管理 OCP 4.19-4.21+ 多架构 CI。</span></div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-date">2023 - 2024 (95 PRs)</div>
-        <div class="timeline-title"><span class="lang-en">ERT Framework & Prow CI Pipeline Engineering</span><span class="lang-cn">ERT 框架与 Prow CI 流水线工程</span></div>
-        <div class="timeline-desc"><span class="lang-en">Built the ERT automation framework for end-to-end release management. Designed Prow auto-release job chains. Set up multi-architecture job controllers and QE release gate testing. Contributed to kube-burner and cloud-bulldozer for performance benchmarking.</span><span class="lang-cn">构建 ERT 自动化框架实现端到端发布管理。设计 Prow 自动发布任务链。建立多架构 Job Controller 和 QE 发布门控测试。贡献 kube-burner 和 cloud-bulldozer 性能基准测试。</span></div>
+        <div class="timeline-date">2023 - 2024 &middot; 95 merged PRs</div>
+        <div class="timeline-title"><span class="lang-en">ERT Framework &amp; Release Engineering</span><span class="lang-cn">ERT 框架与发布工程</span></div>
+        <div class="timeline-desc"><span class="lang-en">Designed and built ERT automation framework (74 commits). Led Jenkins-to-Prow migration. Created kube-burner OLMv1 workloads. Established multi-arch release gate testing. Performance benchmarking with cloud-bulldozer.</span><span class="lang-cn">设计并构建 ERT 自动化框架（74 次提交）。主导 Jenkins 到 Prow 迁移。创建 kube-burner OLMv1 工作负载。建立多架构发布门控测试。使用 cloud-bulldozer 进行性能基准测试。</span></div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-date">2020 - 2022 (104 PRs)</div>
-        <div class="timeline-title"><span class="lang-en">OpenShift E2E Testing & OLM Automation</span><span class="lang-cn">OpenShift E2E 测试与 OLM 自动化</span></div>
-        <div class="timeline-desc"><span class="lang-en">Major contributions to OpenShift E2E test suite for OLM. Developed comprehensive test automation covering operator installation, upgrade, subscription, and catalog management. Led Jenkins-to-Prow CI migration. Began openshift/release pipeline work.</span><span class="lang-cn">为 OLM 的 OpenShift E2E 测试套件做出重大贡献。开发全面的测试自动化覆盖 Operator 安装、升级、订阅和 Catalog 管理。主导 Jenkins 到 Prow 的 CI 迁移。开始 openshift/release 流水线工作。</span></div>
+        <div class="timeline-date">2020 - 2022 &middot; 104 merged PRs</div>
+        <div class="timeline-title"><span class="lang-en">E2E Test Automation at Scale</span><span class="lang-cn">大规模 E2E 测试自动化</span></div>
+        <div class="timeline-desc"><span class="lang-en">Major openshift-tests-private contributions (459 total commits). Comprehensive OLM E2E test suite. Prow CI pipeline configuration (139 total commits to release). Jenkins pipeline libraries. Infrastructure provisioning templates.</span><span class="lang-cn">openshift-tests-private 的主要贡献（共 459 次提交）。全面的 OLM E2E 测试套件。Prow CI 流水线配置（共 139 次提交到 release）。Jenkins 流水线库。基础设施配置模板。</span></div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-date">2017 - 2019 (37 PRs)</div>
-        <div class="timeline-title"><span class="lang-en">Kubernetes Community & OpenShift Foundation</span><span class="lang-cn">Kubernetes 社区与 OpenShift 基础</span></div>
-        <div class="timeline-desc"><span class="lang-en">Contributed to Kubernetes upstream code and Chinese documentation translation (11 articles). Built early OpenShift test infrastructure and verification tests. Established operator-marketplace contributions. Rapid promotion from Engineer to Principal within 2 years.</span><span class="lang-cn">贡献 Kubernetes 上游代码和中文文档翻译（11 篇文章）。构建早期 OpenShift 测试基础设施和验证测试。建立 operator-marketplace 贡献。2 年内从工程师快速晋升到首席。</span></div>
+        <div class="timeline-date">2017 - 2019 &middot; Promoted twice in 2 years</div>
+        <div class="timeline-title"><span class="lang-en">Red Hat: Kubernetes Community &amp; OpenShift Foundation</span><span class="lang-cn">红帽：Kubernetes 社区与 OpenShift 基础</span></div>
+        <div class="timeline-desc"><span class="lang-en">Joined Red Hat. Early OLM and marketplace contributions. Kubernetes Chinese documentation (11 articles). Built learn-operator for CRD/Controller/Webhook education. Rapidly promoted: Engineer → Senior → Principal.</span><span class="lang-cn">加入红帽。早期 OLM 和 Marketplace 贡献。Kubernetes 中文文档（11 篇文章）。构建 learn-operator 用于 CRD/Controller/Webhook 教学。快速晋升：工程师 → 高级 → 首席。</span></div>
       </div>
       <div class="timeline-item">
         <div class="timeline-date">2015 - 2017</div>
         <div class="timeline-title"><span class="lang-en">IBM China Research Lab: GPU Scheduling on Kubernetes</span><span class="lang-cn">IBM 中国研究院：Kubernetes GPU 调度</span></div>
-        <div class="timeline-desc"><span class="lang-en">Built GPU scheduling and resource management solutions in Kubernetes for distributed computing workloads at IBM. Contributed 2 merged PRs to upstream Kubernetes. Early adopter of container orchestration for machine learning and high-performance computing.</span><span class="lang-cn">在 IBM 为分布式计算工作负载构建 Kubernetes GPU 调度和资源管理方案。向上游 Kubernetes 贡献 2 个合并 PR。容器编排在机器学习和高性能计算领域的早期实践者。</span></div>
+        <div class="timeline-desc"><span class="lang-en">Built GPU scheduling and resource management for distributed computing on Kubernetes. 2 merged PRs to upstream kubernetes/kubernetes. Early adopter of container orchestration for HPC and ML workloads.</span><span class="lang-cn">在 Kubernetes 上构建分布式计算的 GPU 调度和资源管理。向上游 kubernetes/kubernetes 贡献 2 个合并 PR。容器编排在 HPC 和 ML 工作负载中的早期实践者。</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PR Distribution Chart -->
-<section class="section" style="background: rgba(96,165,250,0.02);">
-  <div class="container">
-    <div class="section-title"><span class="icon">&#x1F4CA;</span>
-      <span class="lang-en">Contribution Distribution</span>
-      <span class="lang-cn">贡献分布</span>
-    </div>
-    <div class="section-subtitle">
-      <span class="lang-en">PR distribution across major repositories</span>
-      <span class="lang-cn">跨主要仓库的 PR 分布</span>
-    </div>
-
-    <div class="grid-4">
-      <div class="card" style="text-align: center;">
-        <h3 style="color: var(--primary);">129</h3>
-        <p>openshift/release</p>
-        <div class="tech-stack" style="justify-content: center;"><span class="tech-tag">CI/CD</span></div>
-      </div>
-      <div class="card" style="text-align: center;">
-        <h3 style="color: var(--primary);">40</h3>
-        <p>openshift/release-tests</p>
-        <div class="tech-stack" style="justify-content: center;"><span class="tech-tag">Automation</span></div>
-      </div>
-      <div class="card" style="text-align: center;">
-        <h3 style="color: var(--primary);">18</h3>
-        <p>openshift/openshift-tests</p>
-        <div class="tech-stack" style="justify-content: center;"><span class="tech-tag go">Go</span></div>
-      </div>
-      <div class="card" style="text-align: center;">
-        <h3 style="color: var(--primary);">14</h3>
-        <p>operator-framework/OLM</p>
-        <div class="tech-stack" style="justify-content: center;"><span class="tech-tag go">Go</span></div>
-      </div>
-      <div class="card" style="text-align: center;">
-        <h3 style="color: var(--primary);">12</h3>
-        <p>openshift/operator-framework-olm</p>
-        <div class="tech-stack" style="justify-content: center;"><span class="tech-tag go">Go</span></div>
-      </div>
-      <div class="card" style="text-align: center;">
-        <h3 style="color: var(--primary);">16</h3>
-        <p>operator-controller (v1+v2)</p>
-        <div class="tech-stack" style="justify-content: center;"><span class="tech-tag go">Go</span></div>
-      </div>
-      <div class="card" style="text-align: center;">
-        <h3 style="color: var(--primary);">11</h3>
-        <p>Kubernetes Chinese Docs</p>
-        <div class="tech-stack" style="justify-content: center;"><span class="tech-tag">Community</span></div>
-      </div>
-      <div class="card" style="text-align: center;">
-        <h3 style="color: var(--primary);">82</h3>
-        <p><span class="lang-en">Other Repos (30+)</span><span class="lang-cn">其他仓库 (30+)</span></p>
-        <div class="tech-stack" style="justify-content: center;"><span class="tech-tag">Ecosystem</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Certifications & Education -->
+<!-- Certifications -->
 <section class="section">
   <div class="container">
     <div class="section-title"><span class="icon">&#x1F393;</span>
       <span class="lang-en">Certifications &amp; Education</span>
       <span class="lang-cn">认证与教育</span>
     </div>
-    <div class="section-subtitle">
-      <span class="lang-en">Professional certifications and academic background</span>
-      <span class="lang-cn">专业认证与学术背景</span>
-    </div>
-
     <div class="grid-3">
       <div class="card">
         <h3><span class="lang-en">Red Hat Certified Specialist</span><span class="lang-cn">红帽认证专家</span></h3>
-        <p><span class="lang-en">Red Hat Certified Specialist in Ansible Automation — advanced role development, playbook architecture, and large-scale infrastructure automation.</span><span class="lang-cn">红帽 Ansible 自动化认证专家 — 高级 Role 开发、Playbook 架构及大规模基础设施自动化。</span></p>
+        <p><span class="lang-en">Ansible Automation — advanced role development, playbook architecture, large-scale infrastructure automation</span><span class="lang-cn">Ansible 自动化 — 高级 Role 开发、Playbook 架构、大规模基础设施自动化</span></p>
         <div class="tech-stack"><span class="tech-tag">Ansible</span><span class="tech-tag">Red Hat</span></div>
       </div>
       <div class="card">
         <h3>PMP</h3>
-        <p><span class="lang-en">Project Management Professional — certified by PMI. Applied to managing 6 sub-teams across multiple time zones at Red Hat.</span><span class="lang-cn">项目管理专业人士 — PMI 认证。应用于在红帽管理跨多个时区的 6 个子团队。</span></p>
-        <div class="tech-stack"><span class="tech-tag">Project Management</span><span class="tech-tag">PMI</span></div>
+        <p><span class="lang-en">Project Management Professional (PMI) — Group Leader managing 6 sub-teams across Singapore, China, US, Europe</span><span class="lang-cn">项目管理专业人士 (PMI) — 组长管理跨新加坡、中国、美国、欧洲的 6 个子团队</span></p>
+        <div class="tech-stack"><span class="tech-tag">PMI</span><span class="tech-tag">Leadership</span></div>
       </div>
       <div class="card">
         <h3><span class="lang-en">Education</span><span class="lang-cn">教育背景</span></h3>
-        <p><span class="lang-en">B.E. in Electronic Information Engineering — Handan University, 2013. Bilingual: English (professional, 9 years) + Mandarin Chinese (native).</span><span class="lang-cn">电子信息工程学士 — 邯郸学院，2013 年。双语：英语（专业工作语言，9 年）+ 普通话（母语）。</span></p>
-        <div class="tech-stack"><span class="tech-tag"><span class="lang-en">Engineering</span><span class="lang-cn">工程</span></span><span class="tech-tag"><span class="lang-en">Bilingual</span><span class="lang-cn">双语</span></span></div>
+        <p><span class="lang-en">B.E. Electronic Information Engineering — Handan University, 2013. Bilingual: English (9 years professional) + Mandarin Chinese (native)</span><span class="lang-cn">电子信息工程学士 — 邯郸学院，2013。双语：英语（9 年专业工作）+ 普通话（母语）</span></p>
+        <div class="tech-stack"><span class="tech-tag"><span class="lang-en">Bilingual</span><span class="lang-cn">双语</span></span></div>
       </div>
     </div>
   </div>
@@ -876,10 +811,10 @@ html { scroll-behavior: smooth; }
 <div class="footer">
   <div class="container">
     <div class="divider"></div>
-    <p>GitHub: <a href="https://github.com/jianzhangbjz" style="color: var(--primary); text-decoration: none;">github.com/jianzhangbjz</a> | LinkedIn: <a href="https://linkedin.com/in/jianzhangbjz01" style="color: var(--primary); text-decoration: none;">linkedin.com/in/jianzhangbjz01</a></p>
+    <p>GitHub: <a href="https://github.com/jianzhangbjz" style="color: var(--primary); text-decoration: none;">github.com/jianzhangbjz</a> &middot; LinkedIn: <a href="https://linkedin.com/in/jianzhangbjz01" style="color: var(--primary); text-decoration: none;">linkedin.com/in/jianzhangbjz01</a></p>
     <p style="margin-top: 0.3rem;">
-      <span class="lang-en">Generated from GitHub PR analysis | 322 merged PRs across 46 repositories | 2015 - 2026</span>
-      <span class="lang-cn">基于 GitHub PR 数据分析生成 | 跨 46 个仓库 322 个合并 PR | 2015 - 2026</span>
+      <span class="lang-en">Generated from local repository analysis &middot; 38 repos &middot; 1,145 commits &middot; 2015 - 2026</span>
+      <span class="lang-cn">基于本地仓库 git 历史分析 &middot; 38 个仓库 &middot; 1,145 次提交 &middot; 2015 - 2026</span>
     </p>
   </div>
 </div>
@@ -889,49 +824,29 @@ html { scroll-behavior: smooth; }
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
   document.getElementById('particles').appendChild(canvas);
-
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
   resize();
   window.addEventListener('resize', resize);
-
   const particles = Array.from({length: 80}, () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    vx: (Math.random() - 0.5) * 0.4,
-    vy: (Math.random() - 0.5) * 0.4,
-    r: Math.random() * 1.5 + 0.5,
-    a: Math.random() * 0.3 + 0.1
+    x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+    vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
+    r: Math.random() * 1.5 + 0.5, a: Math.random() * 0.3 + 0.1
   }));
-
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     particles.forEach(p => {
-      p.x += p.vx;
-      p.y += p.vy;
-      if (p.x < 0) p.x = canvas.width;
-      if (p.x > canvas.width) p.x = 0;
-      if (p.y < 0) p.y = canvas.height;
-      if (p.y > canvas.height) p.y = 0;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(96, 165, 250, ${p.a})`;
-      ctx.fill();
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = canvas.width; if (p.x > canvas.width) p.x = 0;
+      if (p.y < 0) p.y = canvas.height; if (p.y > canvas.height) p.y = 0;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(96, 165, 250, ${p.a})`; ctx.fill();
     });
     particles.forEach((a, i) => {
       particles.slice(i + 1).forEach(b => {
-        const dx = a.x - b.x;
-        const dy = a.y - b.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
+        const dx = a.x - b.x, dy = a.y - b.y, dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < 150) {
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = `rgba(96, 165, 250, ${0.06 * (1 - dist / 150)})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = `rgba(96, 165, 250, ${0.06 * (1 - dist / 150)})`; ctx.lineWidth = 0.5; ctx.stroke();
         }
       });
     });
