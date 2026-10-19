@@ -182,9 +182,10 @@ html { scroll-behavior: smooth; }
     <span class="lang-cn">张健</span>
   </h1>
   <p class="subtitle">
-    <strong><span class="lang-en">Principal Software Quality Engineer</span><span class="lang-cn">首席软件质量工程师</span></strong>
-    <span class="lang-en"> at </span><span class="lang-cn"> @ </span><strong>Red Hat</strong>
-    <span style="color: var(--text-dim); font-size: 0.9em;"> (2017 - 2026)</span>
+    <strong><span class="lang-en">Kubernetes for GPU fleets</span><span class="lang-cn">面向 GPU 机群的 Kubernetes</span></strong>
+    <span style="display:block; font-size: 0.78em; margin-top: 0.4rem; color: var(--text-dim);">
+      <span class="lang-en">Principal Software Quality Engineer, Red Hat (2017&nbsp;-&nbsp;2026) &mdash; the decade this portfolio documents</span><span class="lang-cn">红帽首席软件质量工程师 (2017&nbsp;-&nbsp;2026) &mdash; 本作品集记录的十年</span>
+    </span>
   </p>
   <p class="tagline">
     <span class="lang-en">
@@ -714,6 +715,11 @@ html { scroll-behavior: smooth; }
       <span class="lang-cn">修复的关键 Bug、构建的功能和工程决策 — 附提交证据</span>
     </div>
     <div class="grid-2">
+      <div class="card">
+        <h3><span class="lang-en">A Watcher That Stopped Without Failing</span><span class="lang-cn">停止却不报错的 Watcher</span></h3>
+        <p><span class="lang-en">NVIDIA NVSentinel's GPU fault analyzer stopped processing events for 15 days while its pod stayed <code>1/1 Running</code> and <code>/healthz</code> answered 200. A transient MongoDB failure ended the change stream, which the processor reported as a clean shutdown. Fixed by reopening the stream within a bounded recovery budget &mdash; bounded, because retrying forever would restore the same silent stop in a retry loop. Also closed a data race the fix would have introduced, and kept credentials off the long-lived watcher.</span><span class="lang-cn">NVIDIA NVSentinel 的 GPU 故障分析器停止处理事件达 15 天，而其 Pod 始终 <code>1/1 Running</code>、<code>/healthz</code> 返回 200。一次瞬时 MongoDB 故障终结了 change stream，而处理器把它当作正常关停上报。修复方式是在有界的恢复预算内重开该流 &mdash; 必须有界，因为无限重试会以重试循环的形式复现同样的静默停止。同时修掉了该修复本会引入的数据竞争，并把凭据移出长生命周期的 watcher。</span></p>
+        <div class="tech-stack"><span class="tech-tag go">Go</span><span class="tech-tag">GPU Fault Handling</span><span class="tech-tag">MongoDB Change Stream</span><span class="tech-tag">Concurrency</span></div>
+      </div>
       <div class="card">
         <h3><span class="lang-en">TOCTOU Race in ensureInstallPlan</span><span class="lang-cn">ensureInstallPlan 中的 TOCTOU 竞态</span></h3>
         <p><span class="lang-en">Discovered a Time-of-Check-to-Time-of-Use race condition in OLM's ensureInstallPlan. The function checked if an InstallPlan existed, then created one — but between check and create, another reconcile loop could create a duplicate. Fixed with atomic create-or-get pattern. Backported to downstream.</span><span class="lang-cn">发现 OLM ensureInstallPlan 中的 TOCTOU 竞态条件。函数先检查 InstallPlan 是否存在再创建，但在检查和创建之间，另一个 Reconcile Loop 可能创建重复。用原子 create-or-get 模式修复。回移到下游。</span></p>
